@@ -127,8 +127,8 @@ namespace NUNCHUCK {
         let accelX = ((byte3 << 2) | ((byte6 >> 2) & 0x3))
         let accelY = ((byte4 << 2) | ((byte6 >> 4) & 0x3))
         let accelZ = ((byte5 << 2) | ((byte6 >> 6) & 0x3))
-        //return (Math.atan2((accelX - 511.0), (accelZ - 511.0)) * 180.0 / Math.PI);
-        return 0;
+        return (Math.atan2((accelX - 511.0), (accelZ - 511.0)) * 180.0 / Math.PI);
+        
     }
 
     //% block="PitchAngle from Nunchuck buffer"
@@ -136,8 +136,8 @@ namespace NUNCHUCK {
         let accelX = ((byte3 << 2) | ((byte6 >> 2) & 0x3))
         let accelY = ((byte4 << 2) | ((byte6 >> 4) & 0x3))
         let accelZ = ((byte5 << 2) | ((byte6 >> 6) & 0x3))
-        //return -(Math.atan2((accelY - 511.0), (accelZ - 511.0)) * 180.0 / Math.PI);
-        return 0;
+        return -(Math.atan2((accelY - 511.0), (accelZ - 511.0)) * 180.0 / Math.PI);
+        
 
     }
 
