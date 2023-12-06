@@ -46,9 +46,10 @@ enum ADDRESS {                     // address for Nunchuck
 /**
  * Blocks
  */
-//% weight=100 color=#0fbc12 icon="\uf11b" block="NUNCHUCK"
+//% color=#0fbc11 icon="\u272a" block="TomatoCube"
 
 namespace NUNCHUCK {
+    //% subcategory=Nunchuck
     //% block="Initialize Nunchuck at i2c Address |addr %addr" 
     export function initAddr(addr: ADDRESS) {
         _addr = addr;
@@ -70,6 +71,7 @@ namespace NUNCHUCK {
         basic.pause(100)
     }
 
+    //% subcategory=Nunchuck
     //% block="Read Nunchuck to buffer"
     export function ReadToBuffer() {
         pins.i2cWriteNumber(
@@ -88,6 +90,7 @@ namespace NUNCHUCK {
     }
     
 
+    //% subcategory=Nunchuck
     //% block="Decipher Nunchuck buffer for State %ctrlState"
     export function ReadState(ctrlState: CTRL_STATE): number {
         if (ctrlState == CTRL_STATE.UP) {
@@ -122,6 +125,7 @@ namespace NUNCHUCK {
 
     }
 
+    //% subcategory=Nunchuck
     //% block="RollAngle from Nunchuck buffer"
     export function rollAngle(): number {
         let accelX = ((byte3 << 2) | ((byte6 >> 2) & 0x3))
@@ -131,6 +135,7 @@ namespace NUNCHUCK {
         
     }
 
+    //% subcategory=Nunchuck
     //% block="PitchAngle from Nunchuck buffer"
     export function pitchAngle(): number {
         let accelX = ((byte3 << 2) | ((byte6 >> 2) & 0x3))
