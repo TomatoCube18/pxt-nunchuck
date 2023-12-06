@@ -1,6 +1,6 @@
 
 /**
- *  NUNCHUCK blocks
+ * TomatoCube Wii I2C NunChuck
  */
 
 let _addr = 0x52;
@@ -47,8 +47,7 @@ enum ADDRESS {                     // address for Nunchuck
  * Blocks
  */
 //% color=#0fbc11 icon="\u272a" block="TomatoCube"
-
-namespace NUNCHUCK {
+namespace tomatoCube {
     //% subcategory=Nunchuck
     //% block="Initialize Nunchuck at i2c Address |addr %addr" 
     export function initAddr(addr: ADDRESS) {
@@ -72,7 +71,7 @@ namespace NUNCHUCK {
     }
 
     //% subcategory=Nunchuck
-    //% block="Read Nunchuck to buffer"
+    //% block="Read Nunchuck readings to buffer"
     export function ReadToBuffer() {
         pins.i2cWriteNumber(
             _addr,
@@ -126,7 +125,7 @@ namespace NUNCHUCK {
     }
 
     //% subcategory=Nunchuck
-    //% block="RollAngle from Nunchuck buffer"
+    //% block="Get Roll Angle from Nunchuck buffer"
     export function rollAngle(): number {
         let accelX = ((byte3 << 2) | ((byte6 >> 2) & 0x3))
         let accelY = ((byte4 << 2) | ((byte6 >> 4) & 0x3))
@@ -136,7 +135,7 @@ namespace NUNCHUCK {
     }
 
     //% subcategory=Nunchuck
-    //% block="PitchAngle from Nunchuck buffer"
+    //% block="Get Pitch Angle from Nunchuck buffer"
     export function pitchAngle(): number {
         let accelX = ((byte3 << 2) | ((byte6 >> 2) & 0x3))
         let accelY = ((byte4 << 2) | ((byte6 >> 4) & 0x3))
