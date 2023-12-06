@@ -48,7 +48,7 @@ enum ADDRESS {                     // address for Nunchuck
  */
 //% color=#0fbc11 icon="\u272a" block="TomatoCube"
 namespace tomatoCube {
-    //% subcategory=Nunchuck
+    //% subcategory=Nunchuck(I2C)
     //% block="Initialize Nunchuck at i2c Address |addr %addr" 
     export function initAddr(addr: ADDRESS) {
         _addr = addr;
@@ -70,7 +70,7 @@ namespace tomatoCube {
         basic.pause(100)
     }
 
-    //% subcategory=Nunchuck
+    //% subcategory=Nunchuck(I2C)
     //% block="Read Nunchuck readings to buffer"
     export function ReadToBuffer() {
         pins.i2cWriteNumber(
@@ -89,7 +89,7 @@ namespace tomatoCube {
     }
     
 
-    //% subcategory=Nunchuck
+    //% subcategory=Nunchuck(I2C)
     //% block="Decipher Nunchuck buffer for State %ctrlState"
     export function ReadState(ctrlState: CTRL_STATE): number {
         if (ctrlState == CTRL_STATE.UP) {
@@ -124,7 +124,7 @@ namespace tomatoCube {
 
     }
 
-    //% subcategory=Nunchuck
+    //% subcategory=Nunchuck(I2C)
     //% block="Get Roll Angle from Nunchuck buffer"
     export function rollAngle(): number {
         let accelX = ((byte3 << 2) | ((byte6 >> 2) & 0x3))
@@ -134,7 +134,7 @@ namespace tomatoCube {
         
     }
 
-    //% subcategory=Nunchuck
+    //% subcategory=Nunchuck(I2C)
     //% block="Get Pitch Angle from Nunchuck buffer"
     export function pitchAngle(): number {
         let accelX = ((byte3 << 2) | ((byte6 >> 2) & 0x3))
