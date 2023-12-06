@@ -1,5 +1,8 @@
 {
-    "name": "NUNCHUCK",
+    "name": "TC-NunChuck",
+    "name": "TC-Dual-Motors",
+    "description": "Makecode block for I2C Wii NunChuck",
+    "license": "MIT",
     "version": "1.0.1",
     "dependencies": {
         "core": "*"
