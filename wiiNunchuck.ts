@@ -80,12 +80,12 @@ namespace tomatoCube {
             false
         )
         basic.pause(250)
-        byte1 = pins.i2cReadNumber(82, NumberFormat.UInt8LE, true)
-        byte2 = pins.i2cReadNumber(82, NumberFormat.UInt8LE, true)
-        byte3 = pins.i2cReadNumber(82, NumberFormat.UInt8LE, true)
-        byte4 = pins.i2cReadNumber(82, NumberFormat.UInt8LE, true)
-        byte5 = pins.i2cReadNumber(82, NumberFormat.UInt8LE, true)
-        byte6 = pins.i2cReadNumber(82, NumberFormat.UInt8LE, false)
+        byte1 = pins.i2cReadNumber(_addr, NumberFormat.UInt8LE, true)
+        byte2 = pins.i2cReadNumber(_addr, NumberFormat.UInt8LE, true)
+        byte3 = pins.i2cReadNumber(_addr, NumberFormat.UInt8LE, true)
+        byte4 = pins.i2cReadNumber(_addr, NumberFormat.UInt8LE, true)
+        byte5 = pins.i2cReadNumber(_addr, NumberFormat.UInt8LE, true)
+        byte6 = pins.i2cReadNumber(_addr, NumberFormat.UInt8LE, false)
     }
     
 
